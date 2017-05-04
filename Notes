@@ -1,25 +1,51 @@
 ==========Git Commands==========
 
-git log //=> check commit log (note, the first one is the most recent change)
+ cd //=> to Change Directory => go to a directory (eg. cd C:\Users\Anto\Downloads\GIT)
+FC //=> find difference between 2 file (eg. FC <first file name> <second file name>)
+Mv <file directory/.txt or whatever the ending .xxx> <name of the file(if you want to move it to the default directory>//=> move file
+          Note: add .  (dot) before the name to make it hidden
+Ls –a //  list all file in the directory including hidden files
+Note: if you want to open any file from bash, you must add “\” before “ ()”
 
-git status //  list the status of your git rep.
-
-git log –stat// it shows each commit and which file was affected
-
-git log –n <number> // show <number> of commits
-
-git diff <commit id> <commit id> //  show changes between the two id.
+Git codes:
+	-git log //=> check commit log (note, the first one is the most recent change)
+	-git status //  list the status of your git rep.
+	-git log –stat// it shows each commit and which file was affected
+	-git log –n <number> // show <number> of commits
+	-git diff <commit id> <commit id> //  show changes between the two id.
 	Note: if there’s not commit ids, then git will compare the latest change with and changes in the staging area.
 	Note: Git diff --staged, compares the changes with the staging area with the result
+	-git clone // Cloning a Repository
+	-git config --global color.ui auto // To get colored diff output (-- global => set to all)
+	-git checkout // => go back to the prior commit (goes to headless state) 
+	-git checkout master // goes back to the most up-to-date commit (aka got back to master)
+	-git -n // => open item in new window
+	-git -w //=> git will wait for item to close before continuing on
+Creating commits in git:
+	Git add <file name> // add the file to the staging area to be tracked.
+You can also specify a commit message via the command line by running git commit -m "Commit message" instead of just git commit. It's still a good idea to get an editor set up, since this will make it easier to write long commit messages that fully describe the change.
+To see recommended commit message style, go to http://udacity.github.io/git-styleguide/
+ Git reset // is to reset all changes that haven’t been committed yet (careful, any of these deleted changes will not be recoverable.
 
-git clone // Cloning a Repository
 
-git config --global color.ui auto // To get colored diff output (-- global => set to all)
+Branches
+-	Git branch // show what branches are available in the rep.
+-	Git branch <name> //=> create a new branch with <name>
+-	Git checkout <branch name> // goes into the branch
+-	Git log --graph --oneline <branch 1> <branch 2> // show comparison between 2 branch.
+  	Note: --oneline is optional, this will show the commit in one line.
+-	Git checkout –b <new branch name> // create a new branch to retain commits you create.
+-	Merging branches
+	o	Git merge <branch 1> <branch2> //  to merge branch1 and 2 together
+	o	Git show <commit id>//  show the comparison between commit and it’s parent
+	o	Git branch -d <branch name> // delete branch (only delete the label)
+	
+GitHub
+-	Git remote //  to see all the current remote
+-	Git remote add <name of the remote> <url> //  to add remote to git (url is the one from github)
+-	Git push <remote name> <branch> //  push the branch into github, branch will have the same name
+-	Git pull <remote name> <branch> //  pull the branch into computer from gitHub, (merge computer’s branch with GitHub’s branch)
+-	Git clone <link> // clone rep. from GitHub
+-	Git fetch // => get the newest commit from GitHub, but doesn’t merge it to the master. If you want to merge it, you will need to use git merge.
+-	Git merge master origin/master // to merge origin and master together
 
-git checkout // => go back to the prior commit (goes to headless state) 
-
-git checkout master // goes back to the most up-to-date commit (aka got back to master)
-
--n // => open item in new window
-
--w //=> git will wait for item to close before continuing on
